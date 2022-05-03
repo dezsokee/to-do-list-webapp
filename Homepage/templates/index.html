@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Tevékenységek</title>  
+{% endblock title %}
+
+{% block tartalom %}
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Családnév</th>
+            <th>Keresztnév</th>
+            <th>Tennivaló</th>
+            <th>Megcsinálva</th>
+            <th>Létrehozva</th>
+            <th>Határidő</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for action in actions %}
+
+            {% if action.done %}
+                <tr class="table-success">
+                    <td> {{ action.id }} </td>
+                    <td> {{ action.surname }} </td>
+                    <td> {{ action.lastname }} </td>
+                    <td> {{ action.whatdo }} </td>
+                    <td> Megcsinálva </td>
+                    <td> {{ action.created }} </td>
+                    <td> {{ action.deadline }} </td>
+                    <td><input type="button" onclick="location.href={% url 'tennivalok' %}" class="btn btn-primary" value= "Módosítás"></td>
+                </tr>
+            {% else %}
+                <tr class="table-warning">
+                    <td> {{ action.id }} </td>
+                    <td> {{ action.surname }} </td>
+                    <td> {{ action.lastname }} </td>
+                    <td> {{ action.whatdo }} </td>
+                    <td> Nincs megcsinálva </td>
+                    <td> {{ action.created }} </td>
+                    <td> {{ action.deadline }} </td>
+                    <td><input type="button" onclick="location.href={% url 'tennivalok' %}" class="btn btn-primary" value= "Módosítás"></td>
+                </tr>
+            {% endif %}
+          
+        {% endfor %}
+    </tbody>
+</table>
+<div align="center">
+    <input type="button" class="btn btn-primary" onclick="location.href={% url 'uj_szemely' %}" value="Új tennivaló hozzáadása">
+</div>
+
+{% endblock tartalom %}

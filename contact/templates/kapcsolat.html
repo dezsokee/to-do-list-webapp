@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Kapcsolat</title>  
+{% endblock title %}
+
+{% block tartalom %}
+    <div class = "container mt-4">
+        <h4> Küldje el az üzenetét! </h4>
+        <hr>
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <input type="submit", class="btn btn-primary", value= "Küldés">
+        </form>
+    </div>
+{% endblock tartalom %}

@@ -1,0 +1,11 @@
+container build:
+docker build -t gcr.io/atestat-vizsga-django/atestat:dev .
+
+container run in localhost:
+docker run --rm --publish 8000:8000 gcr.io/atestat-vizsga-django/atestat:dev
+
+gcloud container registry push:
+docker push gcr.io/atestat-vizsga-django/atestat:dev
+
+gcloud cloudrun deploy:
+gcloud run deploy atestat-dev --image gcr.io/atestat-vizsga-django/atestat:dev --port 8000 --project atestat-vizsga-django --max-instances 1 --platform managed --labels environment=dev --allow-unauthenticated
