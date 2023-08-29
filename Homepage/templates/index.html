@@ -31,7 +31,6 @@
                     <td> Megcsinálva </td>
                     <td> {{ action.created }} </td>
                     <td> {{ action.deadline }} </td>
-                    <td><input type="button" onclick="location.href={% url 'tennivalok' %}" class="btn btn-primary" value= "Módosítás"></td>
                 </tr>
             {% else %}
                 <tr class="table-warning">
@@ -42,7 +41,6 @@
                     <td> Nincs megcsinálva </td>
                     <td> {{ action.created }} </td>
                     <td> {{ action.deadline }} </td>
-                    <td><input type="button" onclick="location.href={% url 'tennivalok' %}" class="btn btn-primary" value= "Módosítás"></td>
                 </tr>
             {% endif %}
           

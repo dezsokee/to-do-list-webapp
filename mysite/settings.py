@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-*a!+go5h#9mqml7h&_yi=j0$wgk3okk)!g2rdr)xlf7elovo9w'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-*a!+go5h#9mqml7h&_yi=j0$wgk3okk)!g2rdr)xlf7elovo9w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-#asdsad
 # SECURITY WARNING: It's recommended that you use this when
 # running in production. The URL will be known once you first deploy
 # to Cloud Run. This code takes the URL and converts it to both these settings formats.
@@ -100,7 +99,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'todos',
+        'USER': 'szabi',
+        'PASSWORD': '3G2003420099szaby',
+        'HOST':'/cloudsql/django-atestat:europe-west2:polls-instance'
     }
 }
 

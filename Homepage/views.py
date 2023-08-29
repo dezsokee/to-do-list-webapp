@@ -1,7 +1,6 @@
 from turtle import done
 from django.shortcuts import render, redirect
 from . models import Action
-##from django.core.mail import send_email
 
 def index (request):
     actions = Action.objects.all()
