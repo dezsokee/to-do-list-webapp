@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>Tevékenységek</title>  
+<title>Activities</title>  
 {% endblock title %}
 
-{% block tartalom %}
+{% block content %}
 <table class="table">
 
     <thead>
         <tr>
             <th>ID</th>
-            <th>Családnév</th>
-            <th>Keresztnév</th>
-            <th>Tennivaló</th>
-            <th>Megcsinálva</th>
-            <th>Létrehozva</th>
-            <th>Határidő</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Activity</th>
+            <th>Done</th>
+            <th>Created</th>
+            <th>Deadline</th>
         </tr>
     </thead>
 
@@ -28,7 +28,7 @@
                     <td> {{ action.surname }} </td>
                     <td> {{ action.lastname }} </td>
                     <td> {{ action.whatdo }} </td>
-                    <td> Megcsinálva </td>
+                    <td> Done </td>
                     <td> {{ action.created }} </td>
                     <td> {{ action.deadline }} </td>
                 </tr>
@@ -38,7 +38,7 @@
                     <td> {{ action.surname }} </td>
                     <td> {{ action.lastname }} </td>
                     <td> {{ action.whatdo }} </td>
-                    <td> Nincs megcsinálva </td>
+                    <td> Not done yet </td>
                     <td> {{ action.created }} </td>
                     <td> {{ action.deadline }} </td>
                 </tr>
@@ -48,7 +48,7 @@
     </tbody>
 </table>
 <div align="center">
-    <input type="button" class="btn btn-primary" onclick="location.href={% url 'uj_szemely' %}" value="Új tennivaló hozzáadása">
+    <input type="button" class="btn btn-primary" onclick="location.href={% url 'new_activity' %}" value="Add new activity">
 </div>
 
-{% endblock tartalom %}
+{% endblock content %}

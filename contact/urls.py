@@ -4,5 +4,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('kapcsolatok/', views.kapcsolat, name='kapcsolat'),
+    path('contacts/', views.contact, name='contact'),
 ]

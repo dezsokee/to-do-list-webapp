@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Homepage</title>  
+{% endblock title %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    {% load static %} <img class="d-block mx-auto mb-4" src="{% static 'mysite/images/logo.png' %}" alt="" width="300" height="225">
+    <h1 class="display-5 fw-bold">Do it yourself!</h1>
+    <h1 class="display-5 fw-bold">Don't put it off until tomorrow!</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Welcome to my To Do List web application!</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="location.href={% url 'activities' %}">List of activities</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="location.href={% url 'new_activity' %}">Add activities</button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

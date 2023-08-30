@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Contact response</title>  
+{% endblock title %}
+
+{% block content %}
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold">Thank you for contacting us!</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Dear {{ name }}! We have received your message on the {{ theme }} topic!
+            We will respond to it shortly!
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <form action="{% url 'homepage'%}">
+                <input type="submit", value= "Back to the homepage!", class="btn btn-outline-primary btn-lg px-4">
+            </form>
+          </div>
+        </div>
+      </div>
+{% endblock content %}

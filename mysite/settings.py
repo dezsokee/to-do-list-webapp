@@ -155,6 +155,6 @@ EMAIL_USE_SSL = False
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'dezsoszabolcs46@gmail.com'
-EMAIL_HOST_PASSWORD = 'pmdvzttxmumrcnyl'
+EMAIL_HOST_PASSWORD = 'zqptrytzxqlolxlm'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

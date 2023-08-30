@@ -1,45 +1,45 @@
 {% extends 'base.html' %}
 
 {% block title %}
-<title>Tevékenység hozzáadása</title>  
+<title>Add new activity</title>  
 {% endblock title %}
 
-{% block tartalom %}
+{% block content %}
     <form method="post">
 
         {% csrf_token %}
         <div class="row">
             <div class="form-group col-xs-3">
-                <label for="surname">Vezetéknév</label>
+                <label for="surname">Firstname</label>
                 <input type="text" class="form-control" id="surname" name="surname" required>
             </div>
         </div>
         
             <div class="col-xs-2">
-                <label for="lastname">Keresztnév</label>
+                <label for="lastname">Lastname</label>
                 <input type="text" class="form-control" id="lastname" name="lastname" required>
             
             <div class="col-xs-2">
-                <label for="whatdo">Tennivaló</label>
+                <label for="whatdo">Activity</label>
                 <textarea id="whatdo" class="form-control" name="whatdo" cols ="30" rows="10" required> </textarea>
             
         </div>
 
         <div class="flex flex-row mt-4 mb-4" align="center">
-            <label class="mx-3" for="done">Megcsinálva</label>
+            <label class="mx-3" for="done">Done</label>
             <input type="checkbox" class="form-check-input align-middle" id="done" name="done">
         </div>
         <div class="flex flex-row mt-4 mb-4" align="center">
-            <label for="created">Létrehozva</label>
+            <label for="created">Created</label>
             <input type="date" id="created" name="created" required>
 
-            <label for="deadline">Határidő</label>
+            <label for="deadline">Deadline</label> 
             <input type="datetime-local" id="deadline" name="deadline" required>
         </div>
 
         <div class="flex flex-row mt-4 mb-4" align="center">
-            <input type="submit" class="btn btn-success mb-4 mt-4" value="Mentés" id="save" name="save">
+            <input type="submit" class="btn btn-success mb-4 mt-4" value="Save" id="save" name="save">
         </div>
 
     </form>
-{% endblock tartalom %}
+{% endblock content %}
