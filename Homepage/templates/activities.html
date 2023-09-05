@@ -5,43 +5,43 @@
 {% endblock title %}
 
 {% block content %}
+
 <table class="table">
-
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Activity</th>
-            <th>Done</th>
-            <th>Created</th>
-            <th>Deadline</th>
-        </tr>
-    </thead>
-
     <tbody>
         {% for action in actions %}
 
             {% if action.done %}
-                <tr class="table-success">
-                    <td> {{ action.id }} </td>
-                    <td> {{ action.surname }} </td>
-                    <td> {{ action.lastname }} </td>
-                    <td> {{ action.whatdo }} </td>
-                    <td> Done </td>
-                    <td> {{ action.created }} </td>
-                    <td> {{ action.deadline }} </td>
-                </tr>
-            {% else %}
-                <tr class="table-warning">
-                    <td> {{ action.id }} </td>
-                    <td> {{ action.surname }} </td>
-                    <td> {{ action.lastname }} </td>
-                    <td> {{ action.whatdo }} </td>
-                    <td> Not done yet </td>
-                    <td> {{ action.created }} </td>
-                    <td> {{ action.deadline }} </td>
-                </tr>
+                <div align="center">
+                    <div class="card border-success w-50 mb-3">
+                        <div class="card-header bg-success text-white">
+                            Action with ID {{ action.id }}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"> {{ action.whatdo }} </h5>
+                            <hr width = '50%'>
+                            <p class="card-text">Created by {{ action.surname }} {{ action.lastname }}</p>
+                            <p class="card-text">Created {{ action.created }}</p>
+                            <p>Deadline {{ action.deadline }} </p>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            {% else %}  
+                <div align="center">
+                    <div class="card border-danger w-50 mb-3">
+                        <div class="card-header bg-danger text-white">
+                            Action with ID {{ action.id }}
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"> {{ action.whatdo }} </h5>
+                            <hr width = '50%'>
+                            <p class="card-text">Created by {{ action.surname }} {{ action.lastname }}</p>
+                            <p class="card-text">Created {{ action.created }}</p>
+                            <p>Deadline {{ action.deadline }} </p>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
             {% endif %}
           
         {% endfor %}
