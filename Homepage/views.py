@@ -1,6 +1,7 @@
 from turtle import done
 from django.shortcuts import render, redirect
 from . models import Action
+from django.utils import timezone
 
 def activities (request):
     actions = Action.objects.all()
@@ -20,7 +21,6 @@ def new_activity (request):
         lastname = request.POST.get('lastname')
         whatdo = request.POST.get('whatdo')
         done = request.POST.get('done')
-        created = request.POST.get('created')
         deadline = request.POST.get('deadline')
         
         if done == 'on':
@@ -28,7 +28,7 @@ def new_activity (request):
         else:
             done = False
             
-        formaction = Action(surname=surname, lastname=lastname, whatdo=whatdo, done=done, created=created, deadline=deadline)
+        formaction = Action(surname=surname, lastname=lastname, whatdo=whatdo, done=done, created=timezone.localtime(timezone.now()), deadline=deadline)
         formaction.save()
         
         return redirect('activities')
